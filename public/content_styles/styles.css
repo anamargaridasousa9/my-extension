@@ -1,0 +1,59 @@
+.fun-gce-box {
+  background-color: #191919;
+  color: white;
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.fun-gce-button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.fun-gce-button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fun-gce-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fun-gce-input {
+  margin: 8px 0px 8px 8px;
+  box-sizing: border-box;
+}
+
+.fun-gce-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 0.5rem;
+  background-color: #ff0000;
+}
+
+.fun-gce-container {
+  padding: 1rem;
+  text-align: center;
+}
+
+.fun-gce-d-flex {
+  display: flex;
+}
+
+.fun-gce-me-auto {
+  margin-right: auto;
+}
+
+.fun-small-logo {
+  height: 40px;
+  margin: 8px 0px;
+}
