@@ -41,12 +41,12 @@ export const handleYoutubePage = (message) => {
   addElementToPage(url);
 };
 
-function removeElementFromPage() {
+const removeElementFromPage = () => {
   let funElement = document.getElementById(ELEMENT_ID);
   if (funElement) funElement.remove();
-}
+};
 
-function addElementToPage(url) {
+const addElementToPage = (url) => {
   const app = document.createElement(ELEMENT_TYPE);
   app.id = ELEMENT_ID;
 
@@ -58,4 +58,4 @@ function addElementToPage(url) {
   ReactDOM.render(<AddToPlayList musicLogo={musicLogoSrc} url={url} />, app);
 
   hasElement = true;
-}
+};

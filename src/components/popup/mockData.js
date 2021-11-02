@@ -1,14 +1,14 @@
 export const songs = [
   {
-    name: "Keane - Somewhere Only We Know",
-    url: "https://www.youtube.com/watch?v=Oextk-If8HQ",
+    name: "Anderson .Paak - Come Down",
+    url: "https://www.youtube.com/watch?v=-OqrcUvrbRY",
   },
   {
-    name: "Taylor Swift - Mean",
-    url: "https://www.youtube.com/watch?v=jYa1eI1hpDE",
+    name: "Jessie Ware - Please",
+    url: "https://www.youtube.com/watch?v=-31FETutIr4",
   },
   {
-    name: "Imagine - John Lennon",
-    url: "https://www.youtube.com/watch?v=YkgkThdzX-8",
+    name: "Stone Sour - Through Glass",
+    url: "https://www.youtube.com/watch?v=GIzDsGyxsQM",
   },
 ];
