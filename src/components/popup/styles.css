@@ -1,0 +1,40 @@
+.fun-header {
+  background-color: #b22222;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.fun-body {
+  height: 350px;
+  overflow-y: auto;
+  background-color: #202020;
+  padding: 1rem;
+}
+
+.fun-list-group {
+  background-color: #3a3b3c;
+  color: white;
+}
+
+.fun-logo {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.fun-footer {
+  background-color: #121212;
+  font-size: 10px;
+  padding: 10px;
+  border-top: 3px solid #b22222 !important;
+}
+
+.fun-footer-logo:hover {
+  opacity: 1;
+}
+
+.fun-footer-logo {
+  height: 18px;
+  margin-left: 10px;
+  opacity: 0.5;
+}
