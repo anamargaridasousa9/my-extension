@@ -27,7 +27,7 @@ const AddToPlayList = ({ url, musicLogo }) => {
 
   return (
     <>
-      <div className="fun-gce-card">
+      <div className="fun-gce-card fun-font">
         <div className="fun-gce-container">
           <div className="fun-gce-d-flex">
             <div className="fun-gce-me-auto">
@@ -53,7 +53,7 @@ const AddToPlayList = ({ url, musicLogo }) => {
             ])}
             onClick={() => addSongToPlayList()}
           >
-            Add video to My playlist
+            Add Video To My Playlist
           </button>
         </div>
       </div>
