@@ -6,7 +6,7 @@ import AddToPlayList from "../components/content";
 
 const ELEMENT_TYPE = "div";
 const ELEMENT_ID = "fun-gce";
-const PARENT_ID = "related";
+const PLAYER_ADS_ID = "player-ads";
 
 const musicLogoDir = "/icons/music-logo.png";
 
@@ -50,7 +50,11 @@ const addElementToPage = (url) => {
   const app = document.createElement(ELEMENT_TYPE);
   app.id = ELEMENT_ID;
 
-  var parentElem = document.getElementById(PARENT_ID);
+  let youtubeElem = document.getElementById(PLAYER_ADS_ID);
+  while (!youtubeElem) {
+    youtubeElem = document.getElementById(PLAYER_ADS_ID);
+  }
+  var parentElem = youtubeElem.parentElement;
   if (parentElem) parentElem.prepend(app);
 
   const musicLogoSrc = chrome.runtime.getURL(musicLogoDir);
