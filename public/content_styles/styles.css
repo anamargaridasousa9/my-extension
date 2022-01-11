@@ -2,20 +2,16 @@
   font-family: "Avenir Next", "Trebuchet MS", sans-serif !important;
 }
 
-.fun-gce-box {
-  color: white;
-  width: 100%;
-  padding: 12px 20px;
-  display: inline-block;
-  border-radius: 4px;
-}
-
 .fun-gce-button {
+  display: inline-block;
   background-color: #b22222;
   border: none;
   text-align: center;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 15px;
+  color: white;
+  border-radius: 4px;
+  padding: 8px 12px;
 }
 
 .fun-gce-button:hover {
@@ -29,9 +25,14 @@
 }
 
 .fun-gce-input {
-  background-color: #191919;
-  margin: 8px 0px 8px 8px;
+  background-color: #d3d3d4;
+  margin: 8px 0px 8px 0px;
   box-sizing: border-box;
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  border: 0;
+  width: 100%;
+  display: inline-block;
 }
 
 .fun-gce-input:focus-visible {
@@ -54,6 +55,12 @@
   text-align: center;
 }
 
+.fun-gce-video {
+  width: 100%;
+  margin-right: 5px;
+  align-items: center;
+}
+
 .fun-gce-d-flex {
   display: flex;
 }
@@ -63,6 +70,7 @@
 }
 
 .fun-small-logo {
-  height: 40px;
-  margin: 8px 0px;
+  height: 30px;
+  margin-right: 5px;
+  display: inline-flex;
 }

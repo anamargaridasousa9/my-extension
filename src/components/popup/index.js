@@ -23,8 +23,25 @@ const FunPopup = () => {
 
   return (
     <div>
-      <div className="fun-header text-center" id="fun-header">
-        My Youtube Playlist
+      <div className="fun-header d-flex" id="fun-header">
+        <div className="me-auto">My Youtube Playlist</div>
+
+        <div>
+          <a
+            href="https://romantic-fibula-b7b.notion.site/React-Google-Chrome-Extension-for-beginners-or-not-Final-df8567b3dc774744aff44385a18c289a"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="fun-footer-logo" src={rrLogoSrc} alt="Blog" />
+          </a>
+          <a
+            href="https://github.com/anamargaridasousa9/my-extension/tree/hooks"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="fun-footer-logo" src={githubLogoSrc} alt="Github" />
+          </a>
+        </div>
       </div>
       <div className="fun-body">
         <div>
@@ -32,7 +49,7 @@ const FunPopup = () => {
             <a
               key={index}
               href={song.url}
-              className="fun-list-group list-group-item list-group-item-action list-group-item-dark mb-2"
+              className="fun-list-group text-start btn btn-light mb-1"
               target="_blank"
               rel="noreferrer"
             >
@@ -43,20 +60,7 @@ const FunPopup = () => {
         </div>
       </div>
       <div id="fun-footer" className="fun-footer text-center">
-        <a
-          href="https://romantic-fibula-b7b.notion.site/React-Google-Chrome-Extension-for-beginners-or-not-Final-df8567b3dc774744aff44385a18c289a"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img className="fun-footer-logo" src={rrLogoSrc} alt="Blog" />
-        </a>
-        <a
-          href="https://github.com/anamargaridasousa9/my-extension/tree/hooks"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img className="fun-footer-logo" src={githubLogoSrc} alt="Github" />
-        </a>
+        React GCE Tutorial 2022
       </div>
     </div>
   );

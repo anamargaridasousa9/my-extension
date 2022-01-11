@@ -47,14 +47,21 @@ const removeElementFromPage = () => {
 };
 
 const addElementToPage = (url) => {
+  let youtubeElem = document.getElementById(PLAYER_ADS_ID);
+  if (!youtubeElem) {
+    console.log("did not found player ads element");
+    addListenerToYoutubePage(url);
+  } else {
+    youtubeElem = document.getElementById(PLAYER_ADS_ID);
+    injectElement(youtubeElem, url);
+  }
+};
+
+const injectElement = (youtubeElem, url) => {
   const app = document.createElement(ELEMENT_TYPE);
   app.id = ELEMENT_ID;
 
-  let youtubeElem = document.getElementById(PLAYER_ADS_ID);
-  while (!youtubeElem) {
-    youtubeElem = document.getElementById(PLAYER_ADS_ID);
-  }
-  var parentElem = youtubeElem.parentElement;
+  let parentElem = youtubeElem.parentElement;
   if (parentElem) parentElem.prepend(app);
 
   const musicLogoSrc = chrome.runtime.getURL(musicLogoDir);
@@ -62,4 +69,29 @@ const addElementToPage = (url) => {
   ReactDOM.render(<AddToPlayList musicLogo={musicLogoSrc} url={url} />, app);
 
   hasElement = true;
+};
+
+// Options for the observer (which mutations to observe)
+const config = { attributes: true, childList: true, subtree: true };
+
+const addListenerToYoutubePage = (url) => {
+  // Select the node that will be observed for mutations
+  const divContainer = document.getElementsByTagName("body")[0];
+
+  // Callback function to execute when mutations are observed
+  const callback = function (mutationsList, observer) {
+    const playerAdsElement = document.getElementById("player-ads");
+    if (playerAdsElement) {
+      console.log("found player ads element");
+      injectElement(playerAdsElement, url);
+      // You can stop observing
+      observer.disconnect();
+    }
+  };
+
+  // Create an observer instance linked to the callback function
+  const observer = new MutationObserver(callback);
+
+  // Start observing the target node for configured mutations
+  observer.observe(divContainer, config);
 };

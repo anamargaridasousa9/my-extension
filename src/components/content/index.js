@@ -28,8 +28,8 @@ const AddToPlayList = ({ url, musicLogo }) => {
   return (
     <>
       <div className="fun-gce-card fun-font">
-        <div className="fun-gce-container">
-          <div className="fun-gce-d-flex">
+        <div className="fun-gce-container fun-gce-d-flex fun-gce-align-center">
+          <div className="fun-gce-d-flex fun-gce-align-center fun-gce-video">
             <div className="fun-gce-me-auto">
               <img
                 className="fun-small-logo fun-gce-me-auto"
@@ -40,21 +40,23 @@ const AddToPlayList = ({ url, musicLogo }) => {
             <input
               type="text"
               name="videoName"
-              placeholder="Video name"
-              className="fun-gce-box fun-gce-input"
+              placeholder="Insert video name here..."
+              className="fun-gce-input"
               value={videoName}
               onChange={(e) => handleNameChange(e)}
             />
           </div>
-          <button
-            className={classNames([
-              "fun-gce-box fun-gce-button",
-              !videoNameTrim && " fun-gce-disabled",
-            ])}
-            onClick={() => addSongToPlayList()}
-          >
-            Add Video To My Playlist
-          </button>
+          <div>
+            <button
+              className={classNames([
+                "fun-gce-button",
+                !videoNameTrim && "fun-gce-disabled",
+              ])}
+              onClick={() => addSongToPlayList()}
+            >
+              +
+            </button>
+          </div>
         </div>
       </div>
       <br />
