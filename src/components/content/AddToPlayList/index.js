@@ -3,10 +3,12 @@
 
 import { useState } from "react";
 import classNames from "classnames";
+import { useEffect } from "react";
 
 const AddToPlayList = ({ url, musicLogo }) => {
   const [videoName, setVideoName] = useState("");
   const videoNameTrim = videoName.trim(); //Removes whitespace from the beginning and end of the videoName string
+  const [saved, setSaved] = useState(false);
 
   const handleNameChange = (event) => {
     setVideoName(event.target.value);
@@ -20,10 +22,14 @@ const AddToPlayList = ({ url, musicLogo }) => {
 
         chrome.storage.local.set({ funSongs: funSongs });
       });
-
       setVideoName("");
+      setSaved(true);
     }
   };
+
+  useEffect(() => {
+    setSaved(false);
+  }, [url]);
 
   return (
     <>
@@ -40,23 +46,25 @@ const AddToPlayList = ({ url, musicLogo }) => {
             <input
               type="text"
               name="videoName"
-              placeholder="Insert video name here..."
+              placeholder={saved ? "Saved!" : "Insert video name here..."}
               className="fun-gce-input"
               value={videoName}
-              onChange={(e) => handleNameChange(e)}
+              onChange={handleNameChange}
+              disabled={saved}
             />
           </div>
-          <div>
+          {!saved && (
             <button
               className={classNames([
                 "fun-gce-button",
                 !videoNameTrim && "fun-gce-disabled",
               ])}
               onClick={() => addSongToPlayList()}
+              disabled={saved}
             >
               +
             </button>
-          </div>
+          )}
         </div>
       </div>
       <br />

@@ -1,5 +1,5 @@
 .fun-font {
-  font-family: "Avenir Next", "Trebuchet MS", sans-serif !important;
+  font-family: "Verdana", sans-serif !important;
 }
 
 .fun-gce-button {
@@ -28,7 +28,7 @@
   background-color: #d3d3d4;
   margin: 8px 0px 8px 0px;
   box-sizing: border-box;
-  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+  font-family: "Verdana", sans-serif !important;
   font-size: 15px;
   border: 0;
   width: 100%;

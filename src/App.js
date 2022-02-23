@@ -1,11 +1,7 @@
-import FunPopup from "./components/popup";
+import FunPopup from "./components/popup/FunPopup";
 
 function App() {
-  return (
-    <div className="fun-font">
-      <FunPopup />
-    </div>
-  );
+  return <FunPopup />;
 }
 
 export default App;

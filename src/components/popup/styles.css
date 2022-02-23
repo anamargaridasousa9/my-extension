@@ -1,3 +1,7 @@
+.fun-font {
+  font-family: "Verdana", sans-serif !important;
+}
+
 .fun-header {
   background-color: #1d1d1d;
   color: white;
@@ -21,6 +25,9 @@
   width: 100%;
   font-size: 14px;
   opacity: 0.8;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .fun-list-group:hover {

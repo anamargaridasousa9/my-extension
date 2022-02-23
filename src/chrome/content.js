@@ -1,8 +1,8 @@
-/* The following comment is needed for the build to succeed */
+/* The following comment is needed when using the chrome api, for the build to succeed */
 /*global chrome*/
 
 import ReactDOM from "react-dom";
-import AddToPlayList from "../components/content";
+import AddToPlayList from "../components/content/AddToPlayList";
 
 const ELEMENT_TYPE = "div";
 const ELEMENT_ID = "fun-gce";
@@ -48,12 +48,11 @@ const removeElementFromPage = () => {
 
 const addElementToPage = (url) => {
   let youtubeElem = document.getElementById(PLAYER_ADS_ID);
-  if (!youtubeElem) {
-    console.log("did not found player ads element");
-    addListenerToYoutubePage(url);
-  } else {
-    youtubeElem = document.getElementById(PLAYER_ADS_ID);
+  if (youtubeElem) {
     injectElement(youtubeElem, url);
+  } else {
+    // did not found player ads element
+    addListenerToYoutubePage(url);
   }
 };
 
@@ -66,7 +65,7 @@ const injectElement = (youtubeElem, url) => {
 
   const musicLogoSrc = chrome.runtime.getURL(musicLogoDir);
 
-  ReactDOM.render(<AddToPlayList musicLogo={musicLogoSrc} url={url} />, app);
+  ReactDOM.render(<p>The extension content is here!</p>, app);
 
   hasElement = true;
 };
@@ -75,14 +74,14 @@ const injectElement = (youtubeElem, url) => {
 const config = { attributes: true, childList: true, subtree: true };
 
 const addListenerToYoutubePage = (url) => {
-  // Select the node that will be observed for mutations
+  // We will observe for mutations in the body of the page
   const divContainer = document.getElementsByTagName("body")[0];
 
   // Callback function to execute when mutations are observed
   const callback = function (mutationsList, observer) {
-    const playerAdsElement = document.getElementById("player-ads");
+    const playerAdsElement = document.getElementById(PLAYER_ADS_ID);
     if (playerAdsElement) {
-      console.log("found player ads element");
+      // Found player-ads div element
       injectElement(playerAdsElement, url);
       // You can stop observing
       observer.disconnect();
