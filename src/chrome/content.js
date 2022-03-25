@@ -8,9 +8,8 @@ const ELEMENT_TYPE = "div";
 const ELEMENT_ID = "fun-gce";
 const PLAYER_ADS_ID = "player-ads";
 
-const musicLogoDir = "/icons/music-logo.png";
-
 let hasElement = false;
+const musicLogoDir = "/icons/music-logo.png";
 
 const messagesFromBackground = (message, sender, sendResponse) => {
   if (message && message.sender === "background") {
@@ -65,7 +64,7 @@ const injectElement = (youtubeElem, url) => {
 
   const musicLogoSrc = chrome.runtime.getURL(musicLogoDir);
 
-  ReactDOM.render(<p>The extension content is here!</p>, app);
+  ReactDOM.render(<p>The extension content is here! Url: {url}</p>, app);
 
   hasElement = true;
 };

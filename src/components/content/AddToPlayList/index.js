@@ -1,4 +1,4 @@
-/* The following comment is needed for the build to succeed */
+/* The following comment is needed when using the chrome api, for the build to succeed */
 /*global chrome*/
 
 import { useState } from "react";
